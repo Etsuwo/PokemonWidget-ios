@@ -14,6 +14,9 @@
 		5AAC44132985F86100C0F57E /* PokemonWigetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAC44122985F86100C0F57E /* PokemonWigetTests.swift */; };
 		5AAC441D2985F86100C0F57E /* PokemonWigetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAC441C2985F86100C0F57E /* PokemonWigetUITests.swift */; };
 		5AAC441F2985F86100C0F57E /* PokemonWigetUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAC441E2985F86100C0F57E /* PokemonWigetUITestsLaunchTests.swift */; };
+		5AAC442C2985FDE000C0F57E /* APIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAC442B2985FDE000C0F57E /* APIProvider.swift */; };
+		5AAC442F2985FE2E00C0F57E /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 5AAC442E2985FE2E00C0F57E /* CombineMoya */; };
+		5AAC44312985FE2E00C0F57E /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 5AAC44302985FE2E00C0F57E /* Moya */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,7 @@
 		5AAC44182985F86100C0F57E /* PokemonWigetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PokemonWigetUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AAC441C2985F86100C0F57E /* PokemonWigetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonWigetUITests.swift; sourceTree = "<group>"; };
 		5AAC441E2985F86100C0F57E /* PokemonWigetUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonWigetUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		5AAC442B2985FDE000C0F57E /* APIProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +55,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AAC44312985FE2E00C0F57E /* Moya in Frameworks */,
+				5AAC442F2985FE2E00C0F57E /* CombineMoya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +104,7 @@
 				5AAC44032985F85E00C0F57E /* ContentView.swift */,
 				5AAC44052985F86100C0F57E /* Assets.xcassets */,
 				5AAC44072985F86100C0F57E /* Preview Content */,
+				5AAC442B2985FDE000C0F57E /* APIProvider.swift */,
 			);
 			path = PokemonWiget;
 			sourceTree = "<group>";
@@ -143,6 +150,10 @@
 			dependencies = (
 			);
 			name = PokemonWiget;
+			packageProductDependencies = (
+				5AAC442E2985FE2E00C0F57E /* CombineMoya */,
+				5AAC44302985FE2E00C0F57E /* Moya */,
+			);
 			productName = PokemonWiget;
 			productReference = 5AAC43FE2985F85E00C0F57E /* PokemonWiget.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +226,9 @@
 				Base,
 			);
 			mainGroup = 5AAC43F52985F85D00C0F57E;
+			packageReferences = (
+				5AAC442D2985FE2E00C0F57E /* XCRemoteSwiftPackageReference "Moya" */,
+			);
 			productRefGroup = 5AAC43FF2985F85E00C0F57E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -259,6 +273,7 @@
 			files = (
 				5AAC44042985F85E00C0F57E /* ContentView.swift in Sources */,
 				5AAC44022985F85E00C0F57E /* PokemonWigetApp.swift in Sources */,
+				5AAC442C2985FDE000C0F57E /* APIProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -583,6 +598,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5AAC442D2985FE2E00C0F57E /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5AAC442E2985FE2E00C0F57E /* CombineMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5AAC442D2985FE2E00C0F57E /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = CombineMoya;
+		};
+		5AAC44302985FE2E00C0F57E /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5AAC442D2985FE2E00C0F57E /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5AAC43F62985F85E00C0F57E /* Project object */;
 }
