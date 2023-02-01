@@ -123,6 +123,14 @@
 			path = Usecase;
 			sourceTree = "<group>";
 		};
+		5A0017EF298A598A00C10108 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				5AAC44012985F85E00C0F57E /* PokemonWigetApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 		5AAC43F52985F85D00C0F57E = {
 			isa = PBXGroup;
 			children = (
@@ -146,9 +154,9 @@
 		5AAC44002985F85E00C0F57E /* PokemonWiget */ = {
 			isa = PBXGroup;
 			children = (
+				5A0017EF298A598A00C10108 /* App */,
 				5A0017EC298A56AD00C10108 /* Usecase */,
 				5AAC44322986032400C0F57E /* API */,
-				5AAC44012985F85E00C0F57E /* PokemonWigetApp.swift */,
 				5AAC44032985F85E00C0F57E /* ContentView.swift */,
 				5AAC44052985F86100C0F57E /* Assets.xcassets */,
 				5AAC44072985F86100C0F57E /* Preview Content */,

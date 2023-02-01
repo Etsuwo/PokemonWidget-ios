@@ -11,7 +11,7 @@ import SwiftUI
 struct PokemonWigetApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(pokeApiProvider: PokeAPIProviderImpl())
         }
     }
 }
