@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5A0017E7298A501100C10108 /* GetSpeciesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0017E6298A501100C10108 /* GetSpeciesRequest.swift */; };
 		5A0017E9298A50C900C10108 /* SpeciesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0017E8298A50C900C10108 /* SpeciesResponse.swift */; };
+		5A0017EE298A56C700C10108 /* GetPokemonUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0017ED298A56C700C10108 /* GetPokemonUsecase.swift */; };
 		5AAC44022985F85E00C0F57E /* PokemonWigetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAC44012985F85E00C0F57E /* PokemonWigetApp.swift */; };
 		5AAC44042985F85E00C0F57E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAC44032985F85E00C0F57E /* ContentView.swift */; };
 		5AAC44062985F86100C0F57E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AAC44052985F86100C0F57E /* Assets.xcassets */; };
@@ -44,6 +45,7 @@
 /* Begin PBXFileReference section */
 		5A0017E6298A501100C10108 /* GetSpeciesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSpeciesRequest.swift; sourceTree = "<group>"; };
 		5A0017E8298A50C900C10108 /* SpeciesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciesResponse.swift; sourceTree = "<group>"; };
+		5A0017ED298A56C700C10108 /* GetPokemonUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPokemonUsecase.swift; sourceTree = "<group>"; };
 		5AAC43FE2985F85E00C0F57E /* PokemonWiget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokemonWiget.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AAC44012985F85E00C0F57E /* PokemonWigetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonWigetApp.swift; sourceTree = "<group>"; };
 		5AAC44032985F85E00C0F57E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -113,6 +115,14 @@
 			path = Response;
 			sourceTree = "<group>";
 		};
+		5A0017EC298A56AD00C10108 /* Usecase */ = {
+			isa = PBXGroup;
+			children = (
+				5A0017ED298A56C700C10108 /* GetPokemonUsecase.swift */,
+			);
+			path = Usecase;
+			sourceTree = "<group>";
+		};
 		5AAC43F52985F85D00C0F57E = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +146,7 @@
 		5AAC44002985F85E00C0F57E /* PokemonWiget */ = {
 			isa = PBXGroup;
 			children = (
+				5A0017EC298A56AD00C10108 /* Usecase */,
 				5AAC44322986032400C0F57E /* API */,
 				5AAC44012985F85E00C0F57E /* PokemonWigetApp.swift */,
 				5AAC44032985F85E00C0F57E /* ContentView.swift */,
@@ -325,6 +336,7 @@
 				5AAC44022985F85E00C0F57E /* PokemonWigetApp.swift in Sources */,
 				5A0017E7298A501100C10108 /* GetSpeciesRequest.swift in Sources */,
 				5AAC442C2985FDE000C0F57E /* APIProvider.swift in Sources */,
+				5A0017EE298A56C700C10108 /* GetPokemonUsecase.swift in Sources */,
 				5AAC4436298611D100C0F57E /* GetPokemonRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
