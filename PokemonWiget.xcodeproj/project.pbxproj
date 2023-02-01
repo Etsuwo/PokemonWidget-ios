@@ -10,6 +10,7 @@
 		5A0017E7298A501100C10108 /* GetSpeciesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0017E6298A501100C10108 /* GetSpeciesRequest.swift */; };
 		5A0017E9298A50C900C10108 /* SpeciesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0017E8298A50C900C10108 /* SpeciesResponse.swift */; };
 		5A0017EE298A56C700C10108 /* GetPokemonUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0017ED298A56C700C10108 /* GetPokemonUsecase.swift */; };
+		5A0017F3298A5A9E00C10108 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5A0017F2298A5A9E00C10108 /* Kingfisher */; };
 		5AAC44022985F85E00C0F57E /* PokemonWigetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAC44012985F85E00C0F57E /* PokemonWigetApp.swift */; };
 		5AAC44042985F85E00C0F57E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAC44032985F85E00C0F57E /* ContentView.swift */; };
 		5AAC44062985F86100C0F57E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AAC44052985F86100C0F57E /* Assets.xcassets */; };
@@ -67,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A0017F3298A5A9E00C10108 /* Kingfisher in Frameworks */,
 				5AAC44312985FE2E00C0F57E /* Moya in Frameworks */,
 				5AAC442F2985FE2E00C0F57E /* CombineMoya in Frameworks */,
 			);
@@ -227,6 +229,7 @@
 			packageProductDependencies = (
 				5AAC442E2985FE2E00C0F57E /* CombineMoya */,
 				5AAC44302985FE2E00C0F57E /* Moya */,
+				5A0017F2298A5A9E00C10108 /* Kingfisher */,
 			);
 			productName = PokemonWiget;
 			productReference = 5AAC43FE2985F85E00C0F57E /* PokemonWiget.app */;
@@ -302,6 +305,7 @@
 			mainGroup = 5AAC43F52985F85D00C0F57E;
 			packageReferences = (
 				5AAC442D2985FE2E00C0F57E /* XCRemoteSwiftPackageReference "Moya" */,
+				5A0017F1298A5A9E00C10108 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 5AAC43FF2985F85E00C0F57E /* Products */;
 			projectDirPath = "";
@@ -680,6 +684,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		5A0017F1298A5A9E00C10108 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 		5AAC442D2985FE2E00C0F57E /* XCRemoteSwiftPackageReference "Moya" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Moya/Moya.git";
@@ -691,6 +703,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		5A0017F2298A5A9E00C10108 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5A0017F1298A5A9E00C10108 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
 		5AAC442E2985FE2E00C0F57E /* CombineMoya */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5AAC442D2985FE2E00C0F57E /* XCRemoteSwiftPackageReference "Moya" */;
