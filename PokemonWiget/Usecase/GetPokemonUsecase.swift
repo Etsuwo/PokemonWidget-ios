@@ -9,10 +9,10 @@ import Foundation
 
 struct GetPokemonUsecase {
     let provider: PokeAPIProvider = PokeAPIProviderImpl()
-    let id: Int
     private let language = "ja-Hrkt"
     
     func exec() async throws -> Pokemon {
+        let id = Int.random(in: 0...PokeAPIConstants.maxId)
         let pokemon = try await provider.exec(request: GetPokemonRequest(id: id))
         let species = try await provider.exec(request: GetSpeciesRequest(id: id))
         let name = species.names.first { $0.language.name == language }!

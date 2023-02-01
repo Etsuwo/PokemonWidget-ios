@@ -6,27 +6,35 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct ContentView: View {
     let pokeApiProvider: PokeAPIProvider
-    @State var name = "ピカチュウ"
+    @State var name = ""
+    @State var image = ""
     
     var body: some View {
         VStack {
-            Text(name)
-                .bold()
-                .font(.system(size: 40))
-                
-            Text("ゲットだぜ！！！")
-                .bold()
-                .font(.system(size: 40))
-                .padding(.top, 4)
+            if (!name.isEmpty) {
+                Text(name)
+                    .bold()
+                    .font(.system(size: 40))
+                Text("ゲットだぜ！！！")
+                    .bold()
+                    .font(.system(size: 40))
+                    .padding(.top, 4)
+            }
+            
+            KFImage(URL(string: image))
+                .padding(.top, 16)
+                .padding(.horizontal, 16)
+                .frame(maxWidth: .infinity)
             
             Button(action: {
                 Task {
-                    let request = GetPokemonRequest(id: Int.random(in: 0...10))
-                    let pokemon = try! await pokeApiProvider.exec(request: request)
-                    
+                    let pokemon = try! await GetPokemonUsecase().exec()
+                    name = pokemon.name
+                    image = pokemon.image
                 }
             }, label: {
                 Text("ポケモンをゲット")
