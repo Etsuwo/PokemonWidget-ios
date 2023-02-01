@@ -12,6 +12,8 @@ final class PokemonWigetTests: XCTestCase {
     
     private let provider = PokeAPIProviderImpl()
     private let frontDefault = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png"
+    private let pikachu = "ピカチュウ"
+    private let language = "ja-Hrkt"
 
     func testGetPokemonRequest() {
         let expection = expectation(description: "testGetPokemonRequest")
@@ -26,7 +28,23 @@ final class PokemonWigetTests: XCTestCase {
                 XCTFail(error.localizedDescription)
             }
         }
-        
+        waitForExpectations(timeout: 10)
+    }
+    
+    func testGetSpeciesRequest() {
+        let expection = expectation(description: "testGetSpeciesRequest")
+        Task {
+            do {
+                let request = GetSpeciesRequest(id: 25)
+                let species = try await provider.exec(request: request)
+                let name = species.names.first { $0.language.name == language }
+                XCTAssertNotNil(name)
+                XCTAssertEqual(name!.name, pikachu)
+                expection.fulfill()
+            } catch {
+                XCTFail(error.localizedDescription)
+            }
+        }
         waitForExpectations(timeout: 10)
     }
 }
