@@ -95,6 +95,24 @@
 			path = API;
 			sourceTree = "<group>";
 		};
+		5A0017EA298A557C00C10108 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				5AAC4435298611D100C0F57E /* GetPokemonRequest.swift */,
+				5A0017E6298A501100C10108 /* GetSpeciesRequest.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		5A0017EB298A558D00C10108 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				5AAC44372986126200C0F57E /* PokemonResponse.swift */,
+				5A0017E8298A50C900C10108 /* SpeciesResponse.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
 		5AAC43F52985F85D00C0F57E = {
 			isa = PBXGroup;
 			children = (
@@ -155,12 +173,10 @@
 		5AAC44322986032400C0F57E /* API */ = {
 			isa = PBXGroup;
 			children = (
+				5A0017EB298A558D00C10108 /* Response */,
+				5A0017EA298A557C00C10108 /* Request */,
 				5AAC442B2985FDE000C0F57E /* APIProvider.swift */,
 				5AAC44332986033F00C0F57E /* PokeAPI.swift */,
-				5AAC4435298611D100C0F57E /* GetPokemonRequest.swift */,
-				5AAC44372986126200C0F57E /* PokemonResponse.swift */,
-				5A0017E6298A501100C10108 /* GetSpeciesRequest.swift */,
-				5A0017E8298A50C900C10108 /* SpeciesResponse.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
