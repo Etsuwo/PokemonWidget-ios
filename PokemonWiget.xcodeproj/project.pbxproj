@@ -44,6 +44,7 @@
 		5AFC1BC8298FC8F2007DEB23 /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 5AFC1BC7298FC8F2007DEB23 /* CombineMoya */; };
 		5AFC1BCA298FC8F6007DEB23 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 5AFC1BC9298FC8F6007DEB23 /* Moya */; };
 		5AFC1BCD298FCADE007DEB23 /* NetworkImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC1BCB298FCA73007DEB23 /* NetworkImage.swift */; };
+		5AFC1BD2298FE91F007DEB23 /* SmallPokemonGetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC1BD1298FE91F007DEB23 /* SmallPokemonGetView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +113,7 @@
 		5AAC4435298611D100C0F57E /* GetPokemonRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPokemonRequest.swift; sourceTree = "<group>"; };
 		5AAC44372986126200C0F57E /* PokemonResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonResponse.swift; sourceTree = "<group>"; };
 		5AFC1BCB298FCA73007DEB23 /* NetworkImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkImage.swift; sourceTree = "<group>"; };
+		5AFC1BD1298FE91F007DEB23 /* SmallPokemonGetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallPokemonGetView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +218,7 @@
 		5A1E41A3298D5FA30075ED08 /* PokemonGetWiget */ = {
 			isa = PBXGroup;
 			children = (
+				5AFC1BCE298FE8DA007DEB23 /* View */,
 				5A1E41A4298D5FA30075ED08 /* PokemonGetWigetBundle.swift */,
 				5A1E41A6298D5FA30075ED08 /* PokemonGetWigetLiveActivity.swift */,
 				5A1E41A8298D5FA30075ED08 /* PokemonGetWiget.swift */,
@@ -297,6 +300,14 @@
 				5AAC44332986033F00C0F57E /* PokeAPI.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		5AFC1BCE298FE8DA007DEB23 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5AFC1BD1298FE91F007DEB23 /* SmallPokemonGetView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -485,6 +496,7 @@
 				5A1E41A5298D5FA30075ED08 /* PokemonGetWigetBundle.swift in Sources */,
 				5AFC1BC0298FC263007DEB23 /* SpeciesResponse.swift in Sources */,
 				5AFC1BCD298FCADE007DEB23 /* NetworkImage.swift in Sources */,
+				5AFC1BD2298FE91F007DEB23 /* SmallPokemonGetView.swift in Sources */,
 				5AFC1BBD298FC25B007DEB23 /* APIProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

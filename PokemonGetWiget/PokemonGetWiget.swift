@@ -44,24 +44,13 @@ struct PokemonGetEntry: TimelineEntry {
 }
 
 struct PokemonGetWigetEntryView : View {
+    @Environment(\.widgetFamily) var family: WidgetFamily
     var entry: Provider.Entry
 
     var body: some View {
-        if let pokemon = entry.pokemon {
-            VStack {
-                NetworkImage(url: URL(string: pokemon.image))
-                    .padding(.horizontal, 32)
-                Group {
-                    Text(pokemon.name)
-                        .font(.system(size: 12))
-                        .fontWeight(.bold)
-                    Text("ゲットだぜー！！！")
-                        .font(.system(size: 16))
-                        .fontWeight(.bold)
-                }.offset(y: -4)
-            }
-        } else {
-            Text("ポケモンゲットならず")
+        switch family {
+        case .systemSmall: SmallPokemonGetView(pokemon: entry.pokemon)
+        default: EmptyView()
         }
     }
 }
@@ -75,6 +64,7 @@ struct PokemonGetWiget: Widget {
         }
         .configurationDisplayName("My Widget")
         .description("This is an example widget.")
+        .supportedFamilies([.systemSmall])
     }
 }
 
