@@ -33,6 +33,17 @@
 		5AAC44342986033F00C0F57E /* PokeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAC44332986033F00C0F57E /* PokeAPI.swift */; };
 		5AAC4436298611D100C0F57E /* GetPokemonRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAC4435298611D100C0F57E /* GetPokemonRequest.swift */; };
 		5AAC44382986126200C0F57E /* PokemonResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAC44372986126200C0F57E /* PokemonResponse.swift */; };
+		5AFC1BBC298FC23C007DEB23 /* GetPokemonUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0017ED298A56C700C10108 /* GetPokemonUsecase.swift */; };
+		5AFC1BBD298FC25B007DEB23 /* APIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAC442B2985FDE000C0F57E /* APIProvider.swift */; };
+		5AFC1BBE298FC25E007DEB23 /* PokeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAC44332986033F00C0F57E /* PokeAPI.swift */; };
+		5AFC1BBF298FC261007DEB23 /* PokemonResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAC44372986126200C0F57E /* PokemonResponse.swift */; };
+		5AFC1BC0298FC263007DEB23 /* SpeciesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0017E8298A50C900C10108 /* SpeciesResponse.swift */; };
+		5AFC1BC1298FC267007DEB23 /* GetPokemonRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAC4435298611D100C0F57E /* GetPokemonRequest.swift */; };
+		5AFC1BC2298FC269007DEB23 /* GetSpeciesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0017E6298A501100C10108 /* GetSpeciesRequest.swift */; };
+		5AFC1BC6298FC8E7007DEB23 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5AFC1BC5298FC8E7007DEB23 /* Kingfisher */; };
+		5AFC1BC8298FC8F2007DEB23 /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 5AFC1BC7298FC8F2007DEB23 /* CombineMoya */; };
+		5AFC1BCA298FC8F6007DEB23 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 5AFC1BC9298FC8F6007DEB23 /* Moya */; };
+		5AFC1BCD298FCADE007DEB23 /* NetworkImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC1BCB298FCA73007DEB23 /* NetworkImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +111,7 @@
 		5AAC44332986033F00C0F57E /* PokeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeAPI.swift; sourceTree = "<group>"; };
 		5AAC4435298611D100C0F57E /* GetPokemonRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPokemonRequest.swift; sourceTree = "<group>"; };
 		5AAC44372986126200C0F57E /* PokemonResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonResponse.swift; sourceTree = "<group>"; };
+		5AFC1BCB298FCA73007DEB23 /* NetworkImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,7 +119,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AFC1BC6298FC8E7007DEB23 /* Kingfisher in Frameworks */,
 				5A1E41A2298D5FA30075ED08 /* SwiftUI.framework in Frameworks */,
+				5AFC1BC8298FC8F2007DEB23 /* CombineMoya in Frameworks */,
+				5AFC1BCA298FC8F6007DEB23 /* Moya in Frameworks */,
 				5A1E41A0298D5FA30075ED08 /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -204,6 +219,7 @@
 				5A1E41A4298D5FA30075ED08 /* PokemonGetWigetBundle.swift */,
 				5A1E41A6298D5FA30075ED08 /* PokemonGetWigetLiveActivity.swift */,
 				5A1E41A8298D5FA30075ED08 /* PokemonGetWiget.swift */,
+				5AFC1BCB298FCA73007DEB23 /* NetworkImage.swift */,
 				5A1E41AA298D5FA30075ED08 /* PokemonGetWiget.intentdefinition */,
 				5A1E41AB298D5FA50075ED08 /* Assets.xcassets */,
 				5A1E41AD298D5FA50075ED08 /* Info.plist */,
@@ -299,6 +315,11 @@
 			dependencies = (
 			);
 			name = PokemonGetWigetExtension;
+			packageProductDependencies = (
+				5AFC1BC5298FC8E7007DEB23 /* Kingfisher */,
+				5AFC1BC7298FC8F2007DEB23 /* CombineMoya */,
+				5AFC1BC9298FC8F6007DEB23 /* Moya */,
+			);
 			productName = PokemonGetWigetExtension;
 			productReference = 5A1E419D298D5FA30075ED08 /* PokemonGetWigetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -453,10 +474,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AFC1BBF298FC261007DEB23 /* PokemonResponse.swift in Sources */,
 				5A1E41AE298D5FA50075ED08 /* PokemonGetWiget.intentdefinition in Sources */,
+				5AFC1BBC298FC23C007DEB23 /* GetPokemonUsecase.swift in Sources */,
+				5AFC1BBE298FC25E007DEB23 /* PokeAPI.swift in Sources */,
+				5AFC1BC1298FC267007DEB23 /* GetPokemonRequest.swift in Sources */,
 				5A1E41A9298D5FA30075ED08 /* PokemonGetWiget.swift in Sources */,
+				5AFC1BC2298FC269007DEB23 /* GetSpeciesRequest.swift in Sources */,
 				5A1E41A7298D5FA30075ED08 /* PokemonGetWigetLiveActivity.swift in Sources */,
 				5A1E41A5298D5FA30075ED08 /* PokemonGetWigetBundle.swift in Sources */,
+				5AFC1BC0298FC263007DEB23 /* SpeciesResponse.swift in Sources */,
+				5AFC1BCD298FCADE007DEB23 /* NetworkImage.swift in Sources */,
+				5AFC1BBD298FC25B007DEB23 /* APIProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -902,6 +931,21 @@
 			productName = CombineMoya;
 		};
 		5AAC44302985FE2E00C0F57E /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5AAC442D2985FE2E00C0F57E /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		5AFC1BC5298FC8E7007DEB23 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5A0017F1298A5A9E00C10108 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		5AFC1BC7298FC8F2007DEB23 /* CombineMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5AAC442D2985FE2E00C0F57E /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = CombineMoya;
+		};
+		5AFC1BC9298FC8F6007DEB23 /* Moya */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5AAC442D2985FE2E00C0F57E /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = Moya;

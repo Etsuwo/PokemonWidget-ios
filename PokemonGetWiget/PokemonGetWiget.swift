@@ -10,41 +10,59 @@ import SwiftUI
 import Intents
 
 struct Provider: IntentTimelineProvider {
-    func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), configuration: ConfigurationIntent())
+    func placeholder(in context: Context) -> PokemonGetEntry {
+        PokemonGetEntry(date: Date(), configuration: ConfigurationIntent(), pokemon: nil)
     }
 
-    func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date(), configuration: configuration)
+    func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (PokemonGetEntry) -> ()) {
+        let entry = PokemonGetEntry(date: Date(), configuration: configuration, pokemon: nil)
         completion(entry)
     }
-
+    
     func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        var entries: [SimpleEntry] = []
 
-        // Generate a timeline consisting of five entries an hour apart, starting from the current date.
-        let currentDate = Date()
-        for hourOffset in 0 ..< 5 {
-            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate, configuration: configuration)
-            entries.append(entry)
+        let entryDate = Calendar.current.date(byAdding: .minute, value: 15, to: Date())!
+        Task {
+            do {
+                let pokemon = try await GetPokemonUsecase().exec()
+                let entry = PokemonGetEntry(date: entryDate, configuration: configuration, pokemon: pokemon)
+                let timeline = Timeline(entries: [entry], policy: .atEnd)
+                completion(timeline)
+            } catch {
+                let entry = PokemonGetEntry(date: entryDate, configuration: configuration, pokemon: nil)
+                let timeline = Timeline(entries: [entry], policy: .atEnd)
+                completion(timeline)
+            }
         }
-
-        let timeline = Timeline(entries: entries, policy: .atEnd)
-        completion(timeline)
     }
 }
 
-struct SimpleEntry: TimelineEntry {
-    let date: Date
+struct PokemonGetEntry: TimelineEntry {
+    var date: Date
     let configuration: ConfigurationIntent
+    let pokemon: Pokemon?
 }
 
 struct PokemonGetWigetEntryView : View {
     var entry: Provider.Entry
 
     var body: some View {
-        Text(entry.date, style: .time)
+        if let pokemon = entry.pokemon {
+            VStack {
+                NetworkImage(url: URL(string: pokemon.image))
+                    .padding(.horizontal, 32)
+                Group {
+                    Text(pokemon.name)
+                        .font(.system(size: 12))
+                        .fontWeight(.bold)
+                    Text("ゲットだぜー！！！")
+                        .font(.system(size: 16))
+                        .fontWeight(.bold)
+                }.offset(y: -4)
+            }
+        } else {
+            Text("ポケモンゲットならず")
+        }
     }
 }
 
@@ -62,7 +80,7 @@ struct PokemonGetWiget: Widget {
 
 struct PokemonGetWiget_Previews: PreviewProvider {
     static var previews: some View {
-        PokemonGetWigetEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent()))
+        PokemonGetWigetEntryView(entry: PokemonGetEntry(date: Date(), configuration: ConfigurationIntent(), pokemon: nil))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }
