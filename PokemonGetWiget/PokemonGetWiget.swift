@@ -15,7 +15,7 @@ struct Provider: IntentTimelineProvider {
     }
 
     func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (PokemonGetEntry) -> ()) {
-        let entry = PokemonGetEntry(date: Date(), configuration: configuration, pokemon: nil)
+        let entry = PokemonGetEntry(date: Date(), configuration: configuration, pokemon: Pokemon(name: "ピカチュウ", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png"))
         completion(entry)
     }
     
