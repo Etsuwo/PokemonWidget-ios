@@ -50,6 +50,7 @@ struct PokemonGetWigetEntryView : View {
     var body: some View {
         switch family {
         case .systemSmall: SmallPokemonGetView(pokemon: entry.pokemon)
+        case .systemMedium: MediumPokemonGetView(pokemon: entry.pokemon)
         default: EmptyView()
         }
     }
@@ -62,9 +63,9 @@ struct PokemonGetWiget: Widget {
         IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
             PokemonGetWigetEntryView(entry: entry)
         }
-        .configurationDisplayName("My Widget")
-        .description("This is an example widget.")
-        .supportedFamilies([.systemSmall])
+        .configurationDisplayName("ポケモンゲット")
+        .description("一定時間ごとに自動でポケモンをゲットします")
+        .supportedFamilies([.systemSmall, .systemMedium])
     }
 }
 

@@ -45,6 +45,7 @@
 		5AFC1BCA298FC8F6007DEB23 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 5AFC1BC9298FC8F6007DEB23 /* Moya */; };
 		5AFC1BCD298FCADE007DEB23 /* NetworkImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC1BCB298FCA73007DEB23 /* NetworkImage.swift */; };
 		5AFC1BD2298FE91F007DEB23 /* SmallPokemonGetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC1BD1298FE91F007DEB23 /* SmallPokemonGetView.swift */; };
+		5AFC1BD4298FF000007DEB23 /* MediumPokemonGetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC1BD3298FF000007DEB23 /* MediumPokemonGetView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +115,7 @@
 		5AAC44372986126200C0F57E /* PokemonResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonResponse.swift; sourceTree = "<group>"; };
 		5AFC1BCB298FCA73007DEB23 /* NetworkImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkImage.swift; sourceTree = "<group>"; };
 		5AFC1BD1298FE91F007DEB23 /* SmallPokemonGetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallPokemonGetView.swift; sourceTree = "<group>"; };
+		5AFC1BD3298FF000007DEB23 /* MediumPokemonGetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumPokemonGetView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -306,6 +308,7 @@
 			isa = PBXGroup;
 			children = (
 				5AFC1BD1298FE91F007DEB23 /* SmallPokemonGetView.swift */,
+				5AFC1BD3298FF000007DEB23 /* MediumPokemonGetView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -497,6 +500,7 @@
 				5AFC1BC0298FC263007DEB23 /* SpeciesResponse.swift in Sources */,
 				5AFC1BCD298FCADE007DEB23 /* NetworkImage.swift in Sources */,
 				5AFC1BD2298FE91F007DEB23 /* SmallPokemonGetView.swift in Sources */,
+				5AFC1BD4298FF000007DEB23 /* MediumPokemonGetView.swift in Sources */,
 				5AFC1BBD298FC25B007DEB23 /* APIProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
