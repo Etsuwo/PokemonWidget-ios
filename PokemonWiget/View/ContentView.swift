@@ -26,6 +26,8 @@ struct ContentView: View {
             }
             
             KFImage(URL(string: image))
+                .resizable()
+                .aspectRatio(contentMode: .fit)
                 .padding(.top, 16)
                 .padding(.horizontal, 16)
                 .frame(maxWidth: .infinity)
